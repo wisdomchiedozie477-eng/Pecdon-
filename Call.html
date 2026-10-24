@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Video Call</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; }
+    body { height: 100vh; background: #0a0a0c; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
+
+    #video-container { width: 90%; height: 75%; position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); background: #18181b; }
+    
+    #local-video { width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); }
+    
+    .user-tag { position: absolute; top: 20px; left: 20px; background: rgba(0, 0, 0, 0.6); padding: 8px 16px; border-radius: 12px; font-size: 14px; font-weight: 500; backdrop-filter: blur(10px); display: flex; align-items: center; gap: 8px; }
+    .user-tag::before { content: ''; width: 8px; height: 8px; background: #10b981; border-radius: 50%; }
+
+    .call-controls { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background: rgba(24, 24, 27, 0.7); padding: 12px 24px; border-radius: 30px; display: flex; gap: 20px; backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); z-index: 10; }
+    
+    .control-btn { width: 54px; height: 54px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #ffffff; transition: all 0.2s ease; }
+    .control-btn:hover { transform: translateY(-3px); }
+    
+    .btn-mute { background: #27272a; }
+    .btn-mute:hover { background: #3f3f46; }
+
+    .btn-camera { background: #27272a; }
+    .btn-camera:hover { background: #3f3f46; }
+
+    .btn-end-call { background: #f43f5e; }
+    .btn-end-call:hover { background: #e11d48; }
+
+  </style>
+</head>
+<body>
+
+  <div id="video-container">
+    <video id="local-video" autoplay muted playsinline></video>
+    <div class="user-tag">You</div>
+  </div>
+
+  <div class="call-controls">
+    <button class="control-btn btn-mute">🎤</button>
+    <button class="control-btn btn-camera">📹</button>
+    <button class="control-btn btn-end-call">📞</button>
+  </div>
+
+  <script>
+    async function startCamera() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+        const videoElement = document.getElementById('local-video');
+        videoElement.srcObject = stream;
+      } catch (error) {
+        console.error('Error accessing camera:', error);
+        alert('Could not access the camera. Please check permissions.');
+      }
+    }
+
+    startCamera();
+  </script>
+
+</body>
+</html>
