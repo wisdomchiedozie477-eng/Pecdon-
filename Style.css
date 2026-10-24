@@ -1,0 +1,91 @@
+body {
+    background-color: #0a0a0c;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-card {
+    background-color: #18181b;
+    padding: 32px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: #27272a;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a1a1aa;
+    font-size: 14px;
+}
+
+.name {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.email {
+    font-size: 14px;
+    color: #a1a1aa;
+    margin-bottom: 24px;
+}
+
+.bio-section {
+    background-color: #0a0a0c;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.bio-section h3 {
+    font-size: 14px;
+    color: #10b981;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.bio-section p {
+    font-size: 14px;
+    color: #e4e4e7;
+    line-height: 1.5;
+}
+
+.edit-btn {
+    width: 100%;
+    background-color: #10b981;
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.edit-btn:hover {
+    background-color: #059669;
+}
