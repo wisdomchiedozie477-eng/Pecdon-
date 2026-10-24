@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { display: flex; height: 100vh; background-color: #0a0a0c; color: #ffffff; }
+
+    /* Sidebar Navigation */
+    .nav-sidebar { width: 80px; background-color: #18181b; display: flex; flex-direction: column; align-items: center; padding: 20px 0; border-right: 1px solid #27272a; }
+    .nav-logo { font-size: 24px; font-weight: 700; margin-bottom: 40px; color: #10b981; }
+    .nav-links { list-style: none; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .nav-links li { width: 100%; text-align: center; }
+    .nav-links a { display: flex; flex-direction: column; align-items: center; gap: 8px; color: #a1a1aa; text-decoration: none; font-size: 12px; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #10b981; }
+    .nav-icon { width: 24px; height: 24px; }
+
+    /* Main Content Area */
+    .main-content { flex: 1; padding: 40px; overflow-y: auto; display: flex; flex-direction: column; gap: 30px; }
+    .welcome-section { display: flex; flex-direction: column; gap: 20px; }
+    .welcome-section h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+    .welcome-section p { color: #a1a1aa; font-size: 14px; }
+    .welcome-illustration { width: 100%; max-width: 300px; height: auto; border-radius: 20px; }
+
+    /* Analytics Grid */
+    .analytics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .stat-card { background-color: #18181b; padding: 24px; border-radius: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); border: 1px solid #27272a; }
+    .stat-title { color: #a1a1aa; font-size: 14px; font-weight: 500; }
+    .stat-value { font-size: 28px; font-weight: 700; color: #ffffff; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-sidebar">
+    <div class="nav-logo">A</div>
+    <ul class="nav-links">
+      <li><a href="Dashboard.html" class="active"><span>📊</span>Dashboard</a></li>
+      <li><a href="Chat.html"><span>💬</span>Chat</a></li>
+      <li><a href="Call.html"><span>📹</span>Call</a></li>
+      <li><a href="Profile.html"><span>👤</span>Profile</a></li>
+      <li><a href="Settings.html"><span>⚙️</span>Settings</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div class="welcome-section">
+      <img src="https://via.placeholder.com/300x200" alt="Welcome Illustration" class="welcome-illustration">
+      <div>
+        <h1>Welcome back, Wisdom!</h1>
+        <p>Here's a summary of your activity today.</p>
+      </div>
+    </div>
+
+    <div class="analytics-grid">
+      <div class="stat-card">
+        <span class="stat-title">Active Chats</span>
+        <span class="stat-value">12</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-title">Total Calls</span>
+        <span class="stat-value">3</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-title">Unread Messages</span>
+        <span class="stat-value">5</span>
+      </div>
+    </div>
+  </main>
+
+</body>
+  </html>
+        
